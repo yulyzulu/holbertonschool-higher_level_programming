@@ -3,10 +3,10 @@ if __name__ == "__main__":
     import sys
     numlen = len(sys.argv)
     if numlen == 1:
-        print("0 arguments.")
+        print("{:d} arguments.".format(numlen - 1))
     elif numlen == 2:
-        print("1 argument:")
-        print("1: ", sys.argv[1])
+        print("{:d} argument:".format(numlen - 1))
+        print("{:d}: ".format(numlen - 1), sys.argv[1])
     else:
         print("{:d} arguments:".format(numlen - 1))
         for i in range(numlen):
