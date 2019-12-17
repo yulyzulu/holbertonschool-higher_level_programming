@@ -4,6 +4,5 @@ def multiple_returns(sentence):
         length = len(sentence)
         first = sentence[0]
     else:
-        lenght = len(sentence)
         first = None
     return (length, first)
