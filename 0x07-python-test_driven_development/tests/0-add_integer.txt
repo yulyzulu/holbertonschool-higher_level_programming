@@ -39,3 +39,9 @@ a and b must be integers
 
     >>> add_integer(10.8, -2)
     8
+
+    b must be an integer
+    >>> add_integer(5, (7, 9))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
