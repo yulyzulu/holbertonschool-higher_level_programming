@@ -1,9 +1,18 @@
-===============================
-2. Say my name
-===============================
-Function: prints My name is <first name> <last name>
->>> say_my_name = __import__('3-say_my_name').say_my_name
+====================
+2. Say my name:
+====================
 
+Import module:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Function:
+===================
+Write a function that prints My name is <first name> <last name>.
+Operations:
+===================
+'first_name' and 'last_name' must be strings otherwise, raise a TypeError exception with the message
+first_name must be a string or last_name must be a string.
+===================
 
 >>> say_my_name("John", "Smith")
 My name is John Smith

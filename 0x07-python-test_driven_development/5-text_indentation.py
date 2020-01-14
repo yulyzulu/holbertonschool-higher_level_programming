@@ -14,13 +14,9 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     else:
         while i < len(text):
-  
             if (text[i] == ".") or (text[i] == "?") or (text[i] == ":"):
                 print("{:s}\n".format(text[i]))
-                if text[i + 1] == " ":
-                    i += 1
-                elif (text[i + 1] == ".") or (text[i + 1] == "?") or (text[i + 1] == ":"):
-                    pass
+                i += 1
             else:
                 print("{:s}".format(text[i]), end="")
             i += 1

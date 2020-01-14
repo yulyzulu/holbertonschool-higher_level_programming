@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Module to execute the function that print name and last name..
+    Module to execute the function that print name and last name.
 """
 
 

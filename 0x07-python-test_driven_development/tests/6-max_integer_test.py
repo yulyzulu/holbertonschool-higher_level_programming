@@ -1,11 +1,17 @@
 #!/usr/bin/python3
 """Unittest for max_integer([..])
 """
+
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
 
+    """
+        Check function max_integer([..])
+    """
     def test_correct_list(self):
         self.assertEqual(max_integer([1, 2, 4, 6]), 6)
         self.assertEqual(max_integer([54, 344, 788, 2]), 788)
@@ -22,4 +28,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_not_list(self):
         with self.assertRaises(TypeError):
             max_integer(3, 5)
-
+        with self.assertRaises(TypeError):
+            max_integer("hi", 5)
+        with self.assertRaises(TypeError):
+            max_integer("hola", "hello")
