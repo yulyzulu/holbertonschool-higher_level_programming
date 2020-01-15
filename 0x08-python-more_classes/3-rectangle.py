@@ -54,5 +54,5 @@ class Rectangle:
         if self.__width != 0 or self.__height != 0:
             col = '#' * self.__width
             return (col + '\n') * (self.__height - 1) + col
-        else:
+        elif self.__width == 0 or self.__height == 0:
             return ""
