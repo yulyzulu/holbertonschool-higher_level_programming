@@ -18,6 +18,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([2, 4, -7, 5]), 5)
         self.assertEqual(max_integer([-3, 4.7, 9, 23]), 23)
         self.assertEqual(max_integer([]), None)
+        self.assertEqual(max_integer([67, 53, 32, 2]), 67)
 
     def test_strings(self):
         with self.assertRaises(TypeError):
@@ -52,3 +53,5 @@ class TestMaxInteger(unittest.TestCase):
             (max_integer[8, [89], 9])
         with self.assertRaises(TypeError):
             max_integer[8, [89], 9]
+        with self.assertRaises(TypeError):
+            max_integer(0)
