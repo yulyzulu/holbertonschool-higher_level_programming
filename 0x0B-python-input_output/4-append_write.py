@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 def append_write(filename="", text=""):
-    with open(filename, 'a') as f:
+    with open(filename, mode='a', encoding='utf-8') as f:
         f.write(text)
         return f.write(text)
