@@ -12,19 +12,19 @@ def text_indentation(text):
 
     cont = 0
     str1 = ""
-    leng = len(text)
+    band = 0
     if type(text) != str:
         raise TypeError("text must be a string")
     else:
         for i in text:
-            cont = cont + 1;
+            cont = cont + 1
             if i != " ":
-                flag = 0
-            if flag == 0:
+                band = 0
+            if band == 0:
                 str1 = str1 + i
             if (i == ".") or (i == "?") or (i == ":"):
                 print("{:s}\n".format(str1))
-                flag = 1
+                band = 1
                 str1 = ""
-            if(leng) == cont:
+            if(len(text)) == cont:
                 print("{:s}".format(str1), end="")
