@@ -1,4 +1,7 @@
 #!/usr/bin/python3
 class MyInt(int):
-    "==" = ne(a, b)
-    "!=" = eq(a, b)
+    def __eq__(self, other):
+            return False
+
+    def __ne__(self, other):
+        return True
