@@ -5,17 +5,12 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-
     def to_json(self, attrs=None):
-        if attrs is None
+        if attrs is None:
             return self.__dict__
 
-        if type(attrs) is list:
-            for i in attrs:
-                if type(i) is str:
-                    for st in attrs:
-                        try:
-                            getattr(...)
-                        except:
-                            continue
-
+        dictionary = {}
+        for i in attrs:
+            if i in self.__dict__.keys():
+                dictionary[i] = self.__dict__[i]
+        return dictionary
