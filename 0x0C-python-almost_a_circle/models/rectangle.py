@@ -87,3 +87,28 @@ class Rectangle(Base):
         else:
             self.__y = value
             return self.__y
+
+    def area(self):
+        return self.__width * self.__height
+
+    def display(self):
+        i = "\n" * self.__y
+        j = " " * self.__x
+        num = j + ("#" * self.__width)
+        k = (num + "\n") * (self.__height - 1)
+        print(i + k + num)
+         
+    def __str__(self):
+        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args, **kwargs):
+        variables = ["id", "width", "height", "x", "y"]
+        if len(args) != 0:
+            i = 0
+            for x in args:
+                setattr(self, variables[i], x)
+                i += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+                
