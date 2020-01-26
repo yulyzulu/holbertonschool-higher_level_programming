@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+''' Rectangle Class  '''
 from models.base import Base
+
 
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -111,4 +113,8 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-                
+
+    def to_dictionary(self):
+        dictionary = {'id': self.id, 'width': self.__width, 'height': self.__height, 'x': self.__x, 'y': self.__y}
+        return dictionary
+
