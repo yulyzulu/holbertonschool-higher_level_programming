@@ -56,3 +56,19 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ load from file method """
+        filename1 = cls.__name__ + ".json"
+        try:
+            with open(filename1, "r") as f:
+                read = f.read
+                list_dir_python = cls.from_json_string(read)
+            list_instances = []
+            for dir1 in list_dir_python:
+                objets = cls.create(**dir1)
+                list_instances.append(objects)
+            return list_instances
+        except:
+            return []
