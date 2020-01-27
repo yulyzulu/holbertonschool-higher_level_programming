@@ -94,9 +94,11 @@ class Rectangle(Base):
             return self.__y
 
     def area(self):
+        """Area method"""
         return self.__width * self.__height
 
     def display(self):
+        """ Display Method"""
         i = "\n" * self.__y
         j = " " * self.__x
         num = j + ("#" * self.__width)
@@ -104,10 +106,12 @@ class Rectangle(Base):
         print(i + k + num)
 
     def __str__(self):
+        """ Str method"""
         msgs = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
         return msgs.format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
+        """ Update method"""
         variables = ["id", "width", "height", "x", "y"]
         if len(args) != 0:
             i = 0
@@ -119,6 +123,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """ dictionary method """
         dictionary = {
                     'id': self.id,
                     'width': self.__width,
