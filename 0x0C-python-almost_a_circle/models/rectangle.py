@@ -96,7 +96,6 @@ class Rectangle(Base):
     def area(self):
         return self.__width * self.__height
 
-    @publicmethod
     def display(self):
         i = "\n" * self.__y
         j = " " * self.__x
@@ -108,7 +107,6 @@ class Rectangle(Base):
         msgs = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
         return msgs.format(self.id, self.x, self.y, self.width, self.height)
 
-    @publicmethod
     def update(self, *args, **kwargs):
         variables = ["id", "width", "height", "x", "y"]
         if len(args) != 0:
