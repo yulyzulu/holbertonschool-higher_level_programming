@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-''' Rectangle Class  '''
+"""
+Module to execute the functions
+"""
 from models.base import Base
 
 
 class Rectangle(Base):
+    ''' Rectangle Class  '''
     def __init__(self, width, height, x=0, y=0, id=None):
         if type(width) != int:
             raise TypeError("width must be an integer")
@@ -93,16 +96,19 @@ class Rectangle(Base):
     def area(self):
         return self.__width * self.__height
 
+    @publicmethod
     def display(self):
         i = "\n" * self.__y
         j = " " * self.__x
         num = j + ("#" * self.__width)
         k = (num + "\n") * (self.__height - 1)
         print(i + k + num)
-         
-    def __str__(self):
-        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x, self.__y, self.__width, self.__height))
 
+    def __str__(self):
+        msgs = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
+        return msgs.format(self.id, self.x, self.y, self.width, self.height)
+
+    @publicmethod
     def update(self, *args, **kwargs):
         variables = ["id", "width", "height", "x", "y"]
         if len(args) != 0:
@@ -115,6 +121,11 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        dictionary = {'id': self.id, 'width': self.__width, 'height': self.__height, 'x': self.__x, 'y': self.__y}
+        dictionary = {
+                    'id': self.id,
+                    'width': self.__width,
+                    'height': self.__height,
+                    'x': self.__x,
+                    'y': self.__y
+                     }
         return dictionary
-
