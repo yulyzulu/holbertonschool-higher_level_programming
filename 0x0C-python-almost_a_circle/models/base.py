@@ -32,7 +32,6 @@ class Base:
         if list_objs is not None:
             for obj in list_objs:
                 new_list.append(obj.to_dictionary())
-           # json_str = cls.to_json_string(new_list)
         with open(cls.__name__ + ".json", "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(new_list))
 
@@ -64,7 +63,6 @@ class Base:
                 list_dir_python = cls.from_json_string(read)
                 list_instances = []
                 for dir1 in list_dir_python:
-                   # objets = cls.create(**dir1)
                     list_instances.append(cls.create(**dir1))
             return list_instances
 
