@@ -32,9 +32,9 @@ class Base:
         if list_objs is not None:
             for obj in list_objs:
                 new_list.append(obj.to_dictionary())
-            json_str = cls.to_json_string(new_list)
+           # json_str = cls.to_json_string(new_list)
         with open(cls.__name__ + ".json", "w", encoding="utf-8") as f:
-            f.write(json_str)
+            f.write(cls.to_json_string(new_list))
 
     @staticmethod
     def from_json_string(json_string):
