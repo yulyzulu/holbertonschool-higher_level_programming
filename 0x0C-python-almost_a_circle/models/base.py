@@ -33,8 +33,8 @@ class Base:
             for obj in list_objs:
                 new_list.append(obj.to_dictionary())
             json_str = cls.to_json_string(new_list)
-            with open(cls.__name__ + ".json", "w", encoding="utf-8") as f:
-                f.write(json_str)
+        with open(cls.__name__ + ".json", "w", encoding="utf-8") as f:
+            f.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
@@ -62,10 +62,10 @@ class Base:
             with open(filename1, "r") as f:
                 read = f.read
                 list_dir_python = cls.from_json_string(read)
-            list_instances = []
-            for dir1 in list_dir_python:
-                objets = cls.create(**dir1)
-                list_instances.append(objects)
+                list_instances = []
+                for dir1 in list_dir_python:
+                    objets = cls.create(**dir1)
+                    list_instances.append(objects)
             return list_instances
 
         except:
@@ -80,8 +80,8 @@ class Base:
             for obj in list_objs:
                 new_list.append(obj.to_dictionary())
             json_str = cls.to_json_string(new_list)
-            with open(cls.__name__ + ".csv", "w", encoding="utf-8") as f:
-                f.write(json_str)
+        with open(cls.__name__ + ".csv", "w", encoding="utf-8") as f:
+            f.write(json_str)
 
     @classmethod
     def load_from_file_csv(cls):
