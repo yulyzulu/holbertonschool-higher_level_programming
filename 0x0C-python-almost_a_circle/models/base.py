@@ -64,8 +64,8 @@ class Base:
                 list_dir_python = cls.from_json_string(read)
                 list_instances = []
                 for dir1 in list_dir_python:
-                    objets = cls.create(**dir1)
-                    list_instances.append(objects)
+                   # objets = cls.create(**dir1)
+                    list_instances.append(cls.create(**dir1))
             return list_instances
 
         except:
