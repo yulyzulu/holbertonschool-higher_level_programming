@@ -70,3 +70,32 @@ class Base:
 
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Save file Method"""
+        import json
+        new_list = []
+        if list_objs is not None:
+            for obj in list_objs:
+                new_list.append(obj.to_dictionary())
+            json_str = cls.to_json_string(new_list)
+            with open(cls.__name__ + ".csv", "w", encoding="utf-8") as f:
+                f.write(json_str)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ load from file method """
+        filename1 = cls.__name__ + ".csv"
+        try:
+            with open(filename1, "r") as f:
+                read = f.read
+                list_dir_python = cls.from_json_string(read)
+            list_instances = []
+            for dir1 in list_dir_python:
+                objets = cls.create(**dir1)
+                list_instances.append(objects)
+            return list_instances
+
+        except:
+            return []

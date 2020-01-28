@@ -74,5 +74,24 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(r1.width, 6)
         self.assertEqual(r1.height, 6)
 
+    def test_to_dictionary(self):
+
+        Base._Base__nb_objects = 0
+
+        s1 = Square(10, 2, 1)
+        s1_dictionary = s1.to_dictionary()
+        expected = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
+        self.assertEqual(s1_dictionary, expected)
+
+        s1 = Square(1)
+        s1_dictionary = s1.to_dictionary()
+        expected = {'id': 2, 'x': 0, 'size': 1, 'y': 0}
+        self.assertEqual(s1_dictionary, expected)
+
+        s1.update(5, 5, 5, 5)
+        s1_dictionary = s1.to_dictionary()
+        expected = {'id': 5, 'x': 5, 'size': 5, 'y': 5}
+        self.assertEqual(s1_dictionary, expected)
+
     if __name__ == "_main_":
         unittest.main()
