@@ -14,5 +14,5 @@ st/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for instance in session.query(State).order_by(State.id).first():
-        print("{}: {}".format(instance.id, instance.name))
+    first_state = session.query(State).order_by(State.id).first()
+    print("{}: {}".format(first_state.id, first_state.name))
