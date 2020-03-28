@@ -16,4 +16,4 @@ st/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
     for instance in session.query(State).\
                 filter(State.name.like('%a%')).order_by(State.id):
-        print("{}: {}".format(instance.id, instance.name))
+        print("{:d}: {:s}".format(instance.id, instance.name))
