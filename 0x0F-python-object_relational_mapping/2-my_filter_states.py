@@ -12,6 +12,7 @@ st", user=(sys.argv[1]), port=3306, passwd=(sys.argv[2]), db=(sys.argv[3]))
 ORDER BY states.id ASC".format(sys.argv[4]))
     rows = c.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == sys.argv[4]:
+            print(row)
     c.close()
     db.close()
