@@ -12,4 +12,3 @@ if __name__ == "__main__":
 r', auth=(sys.argv[1], sys.argv[2]))
     json_id = req.json()
     print(json_id.get("id"))
- 
