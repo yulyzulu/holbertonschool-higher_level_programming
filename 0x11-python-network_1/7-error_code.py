@@ -12,10 +12,3 @@ if __name__ == "__main__":
     else:
         err_code = req.status_code
         print("Error code: {}".format(err_code))
-
-
-#    try:
-#        print(req.text)
-#    except requests.exceptions.HTTPError:
-#        err_code = req.status_code()
-#        print("Error code: {}".format(err_code))
