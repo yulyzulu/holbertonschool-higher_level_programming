@@ -11,7 +11,5 @@ if (len === 2 || len === 3) {
     numbers.push(process.argv[i]);
   }
   numbers.sort(function (a, b) { return a - b; });
-  console.log(numbers);
-  console.log(len);
   console.log(numbers[len - 4]);
 }
