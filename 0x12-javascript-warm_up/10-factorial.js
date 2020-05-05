@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
-
-function factorial(nu) {
+function factorial (nu) {
   if (nu === NaN) {
     return 1;
   } else if (nu === 0) {
@@ -12,5 +11,5 @@ function factorial(nu) {
 }
 
 n = process.argv[2];
-let fact = factorial(n);
+const fact = factorial(n);
 console.log(fact);
