@@ -1,4 +1,9 @@
 #!/usr/bin/node
 
-exports.calleMoby = function (x, theFunction) {
-  
+let i;
+
+exports.callMeMoby = function (x, theFunction) {
+  for (i = 0; i < x; i++) {
+    console.log('C is fun');
+  }
+};
