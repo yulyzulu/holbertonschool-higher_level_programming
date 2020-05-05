@@ -10,6 +10,8 @@ if (len === 2 || len === 3) {
   for (i = 2; i < len; i++) {
     numbers.push(process.argv[i]);
   }
-  numbers.sort();
+  numbers.sort(function (a, b) { return a - b; });
+  console.log(numbers);
+  console.log(len);
   console.log(numbers[len - 4]);
 }
