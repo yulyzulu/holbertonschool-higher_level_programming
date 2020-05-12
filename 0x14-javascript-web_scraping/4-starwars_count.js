@@ -13,6 +13,7 @@ request(url, function (err, res, body) {
   for (const i in result) {
     const character = result[i].characters;
     for (const j in character) {
+      
       if (character[j] === 'https://swapi-api.hbtn.io/api/people/18/') {
         count = count + 1;
       }

@@ -6,7 +6,7 @@ const fs = require('fs');
 
 try {
   const data = fs.readFileSync(file, 'utf-8');
-  console.log(data);
+  process.stdout.write(data);
 } catch (e) {
   console.log(e);
 }
