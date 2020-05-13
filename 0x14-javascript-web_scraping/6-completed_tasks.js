@@ -7,15 +7,16 @@ request(url, function (err, res, body) {
   if (err) {
     console.log(err);
   }
-  const str = JSON.parse(body);
-  const len = str.length;
-  let count = 0;
-  for (i = 0; i < len; i++) {
-    if (i.userId == //buscar cómo sumar para cada id)
-    if (str.complete === true) {
-      
+  const data = JSON.parse(body);
+  const dic = {};
+  data.forEach(obj => {
+    if (obj.completed) {
+      if (!dic[obj.userId]) {
+        dic[obj.userId] = 1;
+      } else {
+        dic[obj.userId] += 1;
+      }
     }
-  }
-  console.log(len);
-  //console.log(str.completed);
+  });
+  console.log(dic);
 });
